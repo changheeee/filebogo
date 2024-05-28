@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>파일보고</title>
+    <link rel="stylesheet" href="../assets/css/reset.css" />
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <link rel="stylesheet" href="../assets/css/menu.css" />
+    <link rel="stylesheet" href="../assets/css/search.css" />
+  </head>
+  <body>
+    <div id="menu_container"></div>
+    <script>
+      // 메뉴 로드
+      function loadMenu() {
+        fetch("/components/menu.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("menu_container").innerHTML = data;
+          })
+          .catch((error) => console.error("Error loading menu:", error));
+      }
+
+      // 페이지 로드 시 메뉴 로드
+      document.addEventListener("DOMContentLoaded", loadMenu);
+    </script>
+
+    <!-- 페이지 영역 -->
+    <div id="contents">
+      <div class="search_page">
+        <header class="search_header">
+          <div class="header_in">
+            <button class="back_button">
+              <img src="/assets/images/ico_back.svg" alt="뒤로가기" />
+            </button>
+            <form class="search_input_wrapper" action="/search" method="GET">
+              <input
+                type="text"
+                name="query"
+                class="search_input"
+                placeholder="검색어를 입력하세요"
+              />
+              <button type="submit" class="search_button">
+                <img src="/assets/images/ico_search.svg" alt="검색" />
+              </button>
+            </form>
+          </div>
+        </header>
+
+        <div class="search_results">
+          <p class="description">
+            <span>"시민덕희"</span> 검색 결과가 <span>10</span>건 있습니다.
+          </p>
+          <div class="video_grid">
+            <div class="video_item">
+              <img
+                src="/assets/images/video_thumbnail.jpg"
+                alt="비디오 썸네일"
+              />
+              <p class="video_title">
+                [시민덕희] 라미란 엄혜란 장윤주 보이스피싱 총책 검거 실화 모티브
+              </p>
+            </div>
+            <div class="video_item">
+              <img
+                src="/assets/images/video_thumbnail.jpg"
+                alt="비디오 썸네일"
+              />
+              <p class="video_title">
+                [시민덕희] 라미란 엄혜란 장윤주 보이스피싱 총책 검거 실화 모티브
+              </p>
+            </div>
+            <div class="video_item">
+              <img
+                src="/assets/images/video_thumbnail.jpg"
+                alt="비디오 썸네일"
+              />
+              <p class="video_title">
+                [시민덕희] 라미란 엄혜란 장윤주 보이스피싱 총책 검거 실화 모티브
+              </p>
+            </div>
+            <div class="video_item">
+              <img
+                src="/assets/images/video_thumbnail.jpg"
+                alt="비디오 썸네일"
+              />
+              <p class="video_title">
+                [시민덕희] 라미란 엄혜란 장윤주 보이스피싱 총책 검거 실화 모티브
+              </p>
+            </div>
+            <div class="video_item">
+              <img
+                src="/assets/images/video_thumbnail.jpg"
+                alt="비디오 썸네일"
+              />
+              <p class="video_title">
+                [시민덕희] 라미란 엄혜란 장윤주 보이스피싱 총책 검거 실화 모티브
+              </p>
+            </div>
+            <div class="video_item">
+              <img
+                src="/assets/images/video_thumbnail.jpg"
+                alt="비디오 썸네일"
+              />
+              <p class="video_title">
+                [시민덕희] 라미란 엄혜란 장윤주 보이스피싱 총책 검거 실화 모티브
+              </p>
+            </div>
+            <div class="video_item">
+              <img
+                src="/assets/images/video_thumbnail.jpg"
+                alt="비디오 썸네일"
+              />
+              <p class="video_title">
+                [시민덕희] 라미란 엄혜란 장윤주 보이스피싱 총책 검거 실화 모티브
+              </p>
+            </div>
+            <div class="video_item">
+              <img
+                src="/assets/images/video_thumbnail.jpg"
+                alt="비디오 썸네일"
+              />
+              <p class="video_title">
+                [시민덕희] 라미란 엄혜란 장윤주 보이스피싱 총책 검거 실화
+                모티브ddddddddddddddddd
+              </p>
+            </div>
+            <div class="video_item">
+              <img
+                src="/assets/images/video_thumbnail.jpg"
+                alt="비디오 썸네일"
+              />
+              <p class="video_title">
+                [시민덕희] 라미란 엄혜란 장윤주 보이스피싱 총책 검거 실화 모티브
+              </p>
+            </div>
+            <div class="video_item">
+              <img
+                src="/assets/images/video_thumbnail.jpg"
+                alt="비디오 썸네일"
+              />
+              <p class="video_title">
+                [시민덕희] 라미란 엄혜란 장윤주 보이스피싱 총책 검거 실화 모티브
+              </p>
+            </div>
+            <div class="video_item">
+              <img
+                src="/assets/images/video_thumbnail.jpg"
+                alt="비디오 썸네일"
+              />
+              <p class="video_title">
+                [시민덕희] 라미란 엄혜란 장윤주 보이스피싱 총책 검거 실화 모티브
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 스크롤 버튼 -->
+      <div class="arrows_wrap">
+        <ul>
+          <li id="scrolltotop" data-direction="top">
+            <img src="/assets/images/ico_arrow_top.svg" alt="맨 위로" />
+            <hr />
+          </li>
+          <li id="scrollupdown" data-direction="up">
+            <img src="/assets/images/ico_arrow_up.svg" alt="위로" />
+          </li>
+          <li id="scrollupdown" data-direction="down">
+            <img src="/assets/images/ico_arrow_down.svg" alt="아래로" />
+          </li>
+        </ul>
+      </div>
+
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          var scrollStep = 200; // 스크롤 움직이는 거리 (픽셀 단위)
+
+          // 스크롤 버튼 클릭 이벤트 리스너 등록
+          var buttons = document.querySelectorAll(
+            "#scrollupdown, #scrolltotop"
+          );
+          buttons.forEach(function (btn) {
+            btn.addEventListener("click", function () {
+              var direction = this.dataset.direction;
+              if (direction === "up") {
+                window.scrollBy(0, -scrollStep); // 위로 스크롤
+              } else if (direction === "down") {
+                window.scrollBy(0, scrollStep); // 아래로 스크롤
+              } else if (direction === "top") {
+                window.scrollTo({ top: 0, behavior: "smooth" }); // 맨 위로 스크롤
+              }
+            });
+          });
+        });
+      </script>
+    </div>
+  </body>
+</html>

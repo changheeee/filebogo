@@ -1,0 +1,273 @@
+#contents {
+  width: calc(100dvw - 6%);
+  height: 500dvh;
+  position: absolute;
+  right: 0;
+  padding: 1.5vw 4.6vw;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* 메인 슬라이드 */
+.main_carousel .slick-track {
+}
+
+.main_carousel .slick-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  display: block;
+  width: 1.7188vw !important;
+  height: 3.125vw !important;
+}
+
+.main_carousel .slick-prev {
+  left: -3vw !important;
+}
+
+.main_carousel .slick-prev:before {
+  content: "" !important;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url("/assets/images/ico_prev.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.main_carousel .slick-next {
+  right: -3vw !important;
+}
+
+.main_carousel .slick-next:before {
+  content: "" !important;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url("/assets/images/ico_next.svg"); /* 이미지 경로를 실제 경로로 변경 */
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* hover 상태에서 이미지 교체 */
+.main_carousel .slick-prev:hover:before {
+  background-image: url("/assets/images/ico_prev_active.svg"); /* 두께 조절된 이미지 */
+}
+
+.main_carousel .slick-next:hover:before {
+  background-image: url("/assets/images/ico_next_active.svg"); /* 두께 조절된 이미지 */
+}
+
+.main_carousel .slick-dots {
+  position: absolute;
+  right: 1.5vw;
+  bottom: 1.8vw;
+  width: auto;
+  height: fit-content;
+  font-size: 0;
+}
+
+.main_carousel .slick-dots li {
+  margin: 0;
+}
+.main_carousel .slick-dots li button {
+}
+
+.main_carousel .slick-dots li button::before {
+  font-size: 0.8vw !important;
+  color: rgba(238, 238, 238, 0.85) !important;
+  opacity: 0.4;
+}
+
+.slick-dots .slick-active button::before {
+  color: rgba(238, 238, 238, 0.4) !important;
+  opacity: 0.8;
+}
+
+/* 카테고리 버튼 */
+.category_btn_box {
+  padding: 2.3vw 0 4.16vw 0;
+  display: flex;
+  gap: 0.78vw;
+}
+
+.category_btn_box > .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.3vw;
+  background: linear-gradient(180deg, #262626 0%, #1b1b1b 100%);
+  width: 13.4vw;
+  height: 4.7vw;
+  font-size: 1.56vw;
+  transition: transform 0.3s ease;
+  font-weight: 400;
+  color: #eee;
+}
+.category_btn_box > .btn:hover,
+:focus {
+  transform: translateY(-0.7813vw);
+  font-weight: 500;
+}
+
+/* top 컨텐츠 슬라이드 */
+.slide_title {
+  font-size: 1.5625vw;
+  font-weight: 600;
+}
+
+.rank_slide .slick-list {
+  padding-top: 1vw;
+}
+
+.rank_slide .slick-track > div {
+  transition: transform 0.3s ease;
+}
+
+.rank_slide .slick-track > div:hover,
+:focus {
+  transform: translateY(-0.7813vw);
+}
+
+.rank_slide .slick-slide {
+  display: flex;
+  gap: 1.2vw;
+}
+
+.rank_slide .slick-slide .poster {
+  position: relative;
+  border-radius: 0.3vw;
+  overflow: hidden;
+}
+.rank_slide .slick-slide .poster .rank {
+  position: absolute;
+  left: 1.2vw;
+  bottom: 1.2vw;
+  font-size: 6vw;
+  font-family: "Montserrat", sans-serif;
+  font-style: italic;
+  line-height: 1;
+}
+.rank_slide .slick-slide .poster .cover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 46.5%,
+    rgba(0, 0, 0, 0.72) 100%
+  );
+}
+
+.rank_slide .slick-slide .poster img {
+  width: 16vw;
+}
+.rank_slide .slick-slide .content_title {
+  font-size: 1.3vw;
+}
+
+.rank_slide .slick-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  display: block;
+  width: 1.7188vw !important;
+  height: 3.125vw !important;
+}
+
+.rank_slide .slick-prev {
+  left: -3vw !important;
+}
+
+.rank_slide .slick-prev:before {
+  content: "" !important;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url("/assets/images/ico_prev.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.rank_slide .slick-next {
+  right: -3vw !important;
+}
+
+.rank_slide .slick-next:before {
+  content: "" !important;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url("/assets/images/ico_next.svg"); /* 이미지 경로를 실제 경로로 변경 */
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* hover 상태에서 이미지 교체 */
+.rank_slide .slick-prev:hover:before {
+  background-image: url("/assets/images/ico_prev_active.svg"); /* 두께 조절된 이미지 */
+}
+
+.rank_slide .slick-next:hover:before {
+  background-image: url("/assets/images/ico_next_active.svg"); /* 두께 조절된 이미지 */
+}
+
+.arrows_wrap {
+  z-index: 9900;
+  position: fixed;
+  right: 1.5vw;
+  bottom: 1.5vw;
+}
+
+.arrows_wrap ul {
+  border-radius: 0.8vw;
+  overflow: hidden;
+}
+
+.arrows_wrap ul li {
+  cursor: pointer;
+  position: relative;
+  width: 5.2vw;
+  height: 5.2vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a1a1a;
+  transition: background-color 0.3s;
+}
+
+.arrows_wrap ul > #scrolltotop > hr {
+  position: absolute;
+  bottom: 0;
+  color: #555;
+  width: 70%;
+  height: 2px; /* 두께 설정 */
+  background-color: #555; /* 색상 설정 */
+  border: none; /* 기본 테두리 제거 */
+}
+
+.arrows_wrap ul li > img {
+  width: 30%;
+  height: auto;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.arrows_wrap ul li:hover,
+.arrows_wrap ul li:focus {
+  background-color: #333;
+}
+
+.arrows_wrap ul li:hover > img,
+.arrows_wrap ul li:focus > img {
+  opacity: 1;
+}

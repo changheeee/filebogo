@@ -3,7 +3,8 @@
   height: 500dvh;
   position: absolute;
   right: 0;
-  padding: 1.5vw 4.6vw;
+  padding: 0 4.6vw;
+  /* padding: 1.5vw 4.6vw; */
 }
 
 ::-webkit-scrollbar {
@@ -11,7 +12,8 @@
 }
 
 /* 메인 슬라이드 */
-.main_carousel .slick-track {
+.main_carousel {
+  padding-top: 1.5vw;
 }
 
 .main_carousel .slick-arrow {

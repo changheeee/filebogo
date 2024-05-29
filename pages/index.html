@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,7 +7,6 @@
     <link rel="stylesheet" href="../assets/css/reset.css" />
     <link rel="stylesheet" href="../assets/css/styles.css" />
     <link rel="stylesheet" href="../assets/css/menu.css" />
-
     <!-- Slick Slider CSS -->
     <link
       rel="stylesheet"
@@ -20,72 +18,106 @@
       type="text/css"
       href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
     />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+    ></script>
   </head>
   <body>
-    <div id="menu_container"></div>
+    <div id="menu_container" role="navigation"></div>
     <script>
-      // 메뉴 로드
-      function loadMenu() {
-        fetch("/components/menu.html")
-          .then((response) => response.text())
-          .then((data) => {
-            document.getElementById("menu_container").innerHTML = data;
-          })
-          .catch((error) => console.error("Error loading menu:", error));
-      }
+      document.addEventListener("DOMContentLoaded", function () {
+        // 메뉴 로드
+        function loadMenu() {
+          fetch("/components/menu.html")
+            .then((response) => response.text())
+            .then((data) => {
+              document.getElementById("menu_container").innerHTML = data;
+            })
+            .catch((error) => console.error("Error loading menu:", error));
+        }
 
-      // 페이지 로드 시 메뉴 로드
-      document.addEventListener("DOMContentLoaded", loadMenu);
+        loadMenu();
+
+        // 메인 슬라이드
+        $(".main_carousel").slick({
+          infinite: true,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: true,
+          arrows: true,
+          autoplay: false,
+          autoplaySpeed: 5000,
+        });
+
+        // 인기 콘텐츠 슬라이드
+        $(".rank_slide").slick({
+          infinite: false,
+          slidesToShow: 5,
+          slidesToScroll: 5,
+          dots: false,
+          arrows: true,
+          autoplay: false,
+          autoplaySpeed: 5000,
+        });
+
+        var scrollStep = 200; // 스크롤 움직이는 거리 (픽셀 단위)
+
+        // 스크롤 버튼 클릭 이벤트 리스너 등록
+        var buttons = document.querySelectorAll("#scrollupdown, #scrolltotop");
+        buttons.forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            var direction = this.dataset.direction;
+            if (direction === "up") {
+              window.scrollBy(0, -scrollStep); // 위로 스크롤
+            } else if (direction === "down") {
+              window.scrollBy(0, scrollStep); // 아래로 스크롤
+            } else if (direction === "top") {
+              window.scrollTo({ top: 0, behavior: "smooth" }); // 맨 위로 스크롤
+            }
+          });
+        });
+      });
     </script>
 
     <!-- 페이지 영역 -->
-    <div id="contents">
+    <main id="contents">
       <!-- 메인 슬라이드 -->
-      <div class="main_carousel">
+      <section class="main_carousel">
         <div>
-          <img src="/assets/images/slide01.png" alt="" />
+          <img src="/assets/images/slide01.png" alt="슬라이드 1" />
         </div>
-        <div><img src="/assets/images/slide01.png" alt="" /></div>
-        <div><img src="/assets/images/slide01.png" alt="" /></div>
-        <div><img src="/assets/images/slide01.png" alt="" /></div>
-        <div><img src="/assets/images/slide01.png" alt="" /></div>
-      </div>
-
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-      <script
-        type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
-      ></script>
-      <script>
-        $(document).ready(function () {
-          $(".main_carousel").slick({
-            infinite: true,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            dots: true,
-            arrows: true,
-            autoplay: false,
-            autoplaySpeed: 5000,
-          });
-        });
-      </script>
+        <div>
+          <img src="/assets/images/slide01.png" alt="슬라이드 2" />
+        </div>
+        <div>
+          <img src="/assets/images/slide01.png" alt="슬라이드 3" />
+        </div>
+        <div>
+          <img src="/assets/images/slide01.png" alt="슬라이드 4" />
+        </div>
+        <div>
+          <img src="/assets/images/slide01.png" alt="슬라이드 5" />
+        </div>
+      </section>
 
       <!-- 카테고리 버튼 -->
-      <div class="category_btn_box">
-        <a class="btn" href="">영화</a>
-        <a class="btn" href="">드라마</a>
-        <a class="btn" href="">동영상</a>
-        <a class="btn" href="">애니</a>
-      </div>
+      <section class="category_btn_box">
+        <a class="btn" href="#">영화</a>
+        <a class="btn" href="#">드라마</a>
+        <a class="btn" href="#">동영상</a>
+        <a class="btn" href="#">애니</a>
+      </section>
 
       <!-- 인기 콘텐츠 슬라이드 -->
       <h3 class="slide_title">파일보고 TOP10</h3>
-      <div class="rank_slide">
+      <section class="rank_slide">
         <div>
           <div class="poster">
             <div class="cover"></div>
             <h2 class="rank">1</h2>
-            <img src="/assets/images/poster01.png" alt="" />
+            <img src="/assets/images/poster01.png" alt="포스터 1" />
           </div>
           <span class="content_title">시민덕희</span>
         </div>
@@ -93,7 +125,7 @@
           <div class="poster">
             <div class="cover"></div>
             <h2 class="rank">2</h2>
-            <img src="/assets/images/poster01.png" alt="" />
+            <img src="/assets/images/poster01.png" alt="포스터 2" />
           </div>
           <span class="content_title">시민덕희</span>
         </div>
@@ -101,7 +133,7 @@
           <div class="poster">
             <div class="cover"></div>
             <h2 class="rank">3</h2>
-            <img src="/assets/images/poster01.png" alt="" />
+            <img src="/assets/images/poster01.png" alt="포스터 3" />
           </div>
           <span class="content_title">시민덕희</span>
         </div>
@@ -109,7 +141,7 @@
           <div class="poster">
             <div class="cover"></div>
             <h2 class="rank">4</h2>
-            <img src="/assets/images/poster01.png" alt="" />
+            <img src="/assets/images/poster01.png" alt="포스터 4" />
           </div>
           <span class="content_title">시민덕희</span>
         </div>
@@ -117,7 +149,7 @@
           <div class="poster">
             <div class="cover"></div>
             <h2 class="rank">5</h2>
-            <img src="/assets/images/poster01.png" alt="" />
+            <img src="/assets/images/poster01.png" alt="포스터 5" />
           </div>
           <span class="content_title">시민덕희</span>
         </div>
@@ -125,7 +157,7 @@
           <div class="poster">
             <div class="cover"></div>
             <h2 class="rank">6</h2>
-            <img src="/assets/images/poster01.png" alt="" />
+            <img src="/assets/images/poster01.png" alt="포스터 6" />
           </div>
           <span class="content_title">시민덕희</span>
         </div>
@@ -133,7 +165,7 @@
           <div class="poster">
             <div class="cover"></div>
             <h2 class="rank">7</h2>
-            <img src="/assets/images/poster01.png" alt="" />
+            <img src="/assets/images/poster01.png" alt="포스터 7" />
           </div>
           <span class="content_title">시민덕희</span>
         </div>
@@ -141,7 +173,7 @@
           <div class="poster">
             <div class="cover"></div>
             <h2 class="rank">8</h2>
-            <img src="/assets/images/poster01.png" alt="" />
+            <img src="/assets/images/poster01.png" alt="포스터 8" />
           </div>
           <span class="content_title">시민덕희</span>
         </div>
@@ -149,7 +181,7 @@
           <div class="poster">
             <div class="cover"></div>
             <h2 class="rank">9</h2>
-            <img src="/assets/images/poster01.png" alt="" />
+            <img src="/assets/images/poster01.png" alt="포스터 9" />
           </div>
           <span class="content_title">시민덕희</span>
         </div>
@@ -157,30 +189,11 @@
           <div class="poster">
             <div class="cover"></div>
             <h2 class="rank">10</h2>
-            <img src="/assets/images/poster01.png" alt="" />
+            <img src="/assets/images/poster01.png" alt="포스터 10" />
           </div>
           <span class="content_title">시민덕희</span>
         </div>
-      </div>
-
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-      <script
-        type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
-      ></script>
-      <script>
-        $(document).ready(function () {
-          $(".rank_slide").slick({
-            infinite: false,
-            slidesToShow: 5,
-            slidesToScroll: 5,
-            dots: false,
-            arrows: true,
-            autoplay: false,
-            autoplaySpeed: 5000,
-          });
-        });
-      </script>
+      </section>
 
       <!-- 스크롤 버튼 -->
       <div class="arrows_wrap">
@@ -189,37 +202,14 @@
             <img src="/assets/images/ico_arrow_top.svg" alt="맨 위로" />
             <hr />
           </li>
-          <li id="scrollupdown" data-direction="up">
+          <li class="scrollupdown" data-direction="up">
             <img src="/assets/images/ico_arrow_up.svg" alt="위로" />
           </li>
-          <li id="scrollupdown" data-direction="down">
+          <li class="scrollupdown" data-direction="down">
             <img src="/assets/images/ico_arrow_down.svg" alt="아래로" />
           </li>
         </ul>
       </div>
-
-      <script>
-        document.addEventListener("DOMContentLoaded", function () {
-          var scrollStep = 200; // 스크롤 움직이는 거리 (픽셀 단위)
-
-          // 스크롤 버튼 클릭 이벤트 리스너 등록
-          var buttons = document.querySelectorAll(
-            "#scrollupdown, #scrolltotop"
-          );
-          buttons.forEach(function (btn) {
-            btn.addEventListener("click", function () {
-              var direction = this.dataset.direction;
-              if (direction === "up") {
-                window.scrollBy(0, -scrollStep); // 위로 스크롤
-              } else if (direction === "down") {
-                window.scrollBy(0, scrollStep); // 아래로 스크롤
-              } else if (direction === "top") {
-                window.scrollTo({ top: 0, behavior: "smooth" }); // 맨 위로 스크롤
-              }
-            });
-          });
-        });
-      </script>
-    </div>
+    </main>
   </body>
 </html>

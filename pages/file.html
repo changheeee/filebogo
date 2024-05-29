@@ -7,20 +7,7 @@
     <link rel="stylesheet" href="../assets/css/reset.css" />
     <link rel="stylesheet" href="../assets/css/styles.css" />
     <link rel="stylesheet" href="../assets/css/menu.css" />
-    <link rel="stylesheet" href="../assets/css/category.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
-    />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
-    ></script>
+    <link rel="stylesheet" href="../assets/css/file.css" />
   </head>
   <body>
     <div id="menu_container" role="navigation"></div>
@@ -41,9 +28,7 @@
         var scrollStep = 200; // 스크롤 움직이는 거리 (픽셀 단위)
 
         // 스크롤 버튼 클릭 이벤트 리스너
-        var buttons = document.querySelectorAll(
-          "#scrolltotop, [data-direction='up'], [data-direction='down']"
-        );
+        var buttons = document.querySelectorAll("#scrolltotop, .scrollupdown");
         buttons.forEach(function (btn) {
           btn.addEventListener("click", function () {
             var direction = this.dataset.direction;
@@ -56,76 +41,23 @@
             }
           });
         });
-
-        // 장르 선택 슬라이드
-        $(".genre_list").slick({
-          infinite: false,
-          slidesToShow: 9.5,
-          slidesToScroll: 9.5,
-          dots: false,
-          arrows: true,
-          autoplay: false,
-          autoplaySpeed: 5000,
-        });
       });
     </script>
 
     <!-- 페이지 영역 -->
     <main id="contents">
-      <div class="category_page">
-        <header class="category_header">
+      <div class="file_page">
+        <header class="file_header">
           <div class="header_in">
             <button class="back_button">
               <img src="/assets/images/ico_back.svg" alt="뒤로가기" />
             </button>
-            <nav class="nav_category">
-              <a class="cat_item" href="#">영화</a>
-              <a class="cat_item" href="#">드라마</a>
-              <a class="cat_item" href="#">동영상</a>
-              <a class="cat_item" href="#">애니</a>
+            <nav class="nav_file">
+              <a class="cat_item" href="#">받은파일</a>
+              <a class="cat_item" href="#">찜한파일</a>
+              <a class="cat_item" href="#">MY 구독</a>
             </nav>
           </div>
-          <ul class="genre_list">
-            <li class="on">
-              <a href="#">전체</a>
-            </li>
-            <li>
-              <a href="#">최신/미개봉</a>
-            </li>
-            <li>
-              <a href="#">한국영화</a>
-            </li>
-            <li>
-              <a href="#">액션</a>
-            </li>
-            <li>
-              <a href="#">멜로</a>
-            </li>
-            <li>
-              <a href="#">SF/환타지</a>
-            </li>
-            <li>
-              <a href="#">코미디</a>
-            </li>
-            <li>
-              <a href="#">공포/스릴러</a>
-            </li>
-            <li>
-              <a href="#">드라마</a>
-            </li>
-            <li>
-              <a href="#">가족/유아</a>
-            </li>
-            <li>
-              <a href="#">일반</a>
-            </li>
-            <li class="adult">
-              <a href="#">성인</a>
-            </li>
-            <li>
-              <a href="#">제휴</a>
-            </li>
-          </ul>
         </header>
 
         <section class="category_results">
@@ -240,10 +172,10 @@
             <img src="/assets/images/ico_arrow_top.svg" alt="맨 위로" />
             <hr />
           </li>
-          <li data-direction="up">
+          <li class="scrollupdown" data-direction="up">
             <img src="/assets/images/ico_arrow_up.svg" alt="위로" />
           </li>
-          <li data-direction="down">
+          <li class="scrollupdown" data-direction="down">
             <img src="/assets/images/ico_arrow_down.svg" alt="아래로" />
           </li>
         </ul>

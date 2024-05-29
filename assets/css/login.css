@@ -88,7 +88,7 @@ h1 {
   background-image: url("/assets/images/ico_checkbox.svg");
   background-size: contain;
   background-repeat: no-repeat;
-  transition: color 0.3s ease, background-image 0.15s ease; /* 전환 효과 추가 */
+  transition: color 0.3s ease, background-image 0.15s ease;
 }
 
 .checkbox:checked + .checkbox-label {

@@ -1,10 +1,9 @@
 #contents {
   width: calc(100dvw - 6%);
-  height: 500dvh;
+  height: auto;
   position: absolute;
   right: 0;
-  padding: 0 4.6vw;
-  /* padding: 1.5vw 4.6vw; */
+  padding: 0 4.6vw 10vw 4.6vw;
 }
 
 ::-webkit-scrollbar {
@@ -50,7 +49,7 @@
   display: block;
   width: 100%;
   height: 100%;
-  background-image: url("/assets/images/ico_next.svg"); /* 이미지 경로를 실제 경로로 변경 */
+  background-image: url("/assets/images/ico_next.svg");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -58,11 +57,11 @@
 
 /* hover 상태에서 이미지 교체 */
 .main_carousel .slick-prev:hover:before {
-  background-image: url("/assets/images/ico_prev_active.svg"); /* 두께 조절된 이미지 */
+  background-image: url("/assets/images/ico_prev_active.svg");
 }
 
 .main_carousel .slick-next:hover:before {
-  background-image: url("/assets/images/ico_next_active.svg"); /* 두께 조절된 이미지 */
+  background-image: url("/assets/images/ico_next_active.svg");
 }
 
 .main_carousel .slick-dots {
@@ -76,8 +75,6 @@
 
 .main_carousel .slick-dots li {
   margin: 0;
-}
-.main_carousel .slick-dots li button {
 }
 
 .main_carousel .slick-dots li button::before {
@@ -207,7 +204,7 @@
   display: block;
   width: 100%;
   height: 100%;
-  background-image: url("/assets/images/ico_next.svg"); /* 이미지 경로를 실제 경로로 변경 */
+  background-image: url("/assets/images/ico_next.svg");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -215,11 +212,11 @@
 
 /* hover 상태에서 이미지 교체 */
 .rank_slide .slick-prev:hover:before {
-  background-image: url("/assets/images/ico_prev_active.svg"); /* 두께 조절된 이미지 */
+  background-image: url("/assets/images/ico_prev_active.svg");
 }
 
 .rank_slide .slick-next:hover:before {
-  background-image: url("/assets/images/ico_next_active.svg"); /* 두께 조절된 이미지 */
+  background-image: url("/assets/images/ico_next_active.svg");
 }
 
 .arrows_wrap {
@@ -252,9 +249,9 @@
   bottom: 0;
   color: #555;
   width: 70%;
-  height: 2px; /* 두께 설정 */
-  background-color: #555; /* 색상 설정 */
-  border: none; /* 기본 테두리 제거 */
+  height: 2px;
+  background-color: #555;
+  border: none;
 }
 
 .arrows_wrap ul li > img {

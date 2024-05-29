@@ -8,7 +8,7 @@
   top: 0;
   background-color: #000;
   padding-top: 1.5vw;
-  padding-bottom: 5.2vw;
+  padding-bottom: 0.8vw;
 }
 
 .category_header .header_in {
@@ -19,15 +19,22 @@
   align-items: center;
 }
 
-.category_header .header_in .nav_caterory {
+.category_header .header_in .nav_category {
   display: flex;
   gap: 1.5vw;
   margin-left: 1vw;
 }
 
-.category_header .header_in .nav_caterory .cat_item {
+.category_header .header_in .nav_category .cat_item {
   font-size: 3.1vw;
   color: #555;
+  font-weight: 400;
+}
+
+.category_header .header_in .nav_category .cat_item:hover,
+.category_header .header_in .nav_category .cat_item:focus {
+  color: #bbbbbb;
+  font-weight: 500;
 }
 
 .category_header button {
@@ -37,7 +44,6 @@
 
 .category_header .back_button {
   cursor: pointer;
-  /* position: absolute; */
   left: 0;
   width: 4.7vw;
   height: 4.7vw;
@@ -55,56 +61,95 @@
   background-color: #333;
 }
 
-.search_input_wrapper {
-  position: relative;
-  width: 53%;
+.category_header .genre_list li {
+  padding-right: 0.5vw;
 }
-
-.search_input {
-  width: 100%;
-  height: 4.7vw;
-  font-size: 1.8vw;
+.category_header .genre_list li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2vw;
   font-weight: 300;
-  border: none;
-  border-bottom: 2px solid #3d8eee;
-  background: none;
-  color: #fff;
-  outline: none;
+  padding: 1.2vw 0;
+  background-color: #262626;
+  text-wrap: nowrap;
+  border-radius: 100vh;
 }
 
-.search_input_wrapper .search_button {
-  cursor: pointer;
-  opacity: 0.6;
-  position: absolute;
-  right: 0;
-  bottom: 50%;
-  transform: translateY(50%);
-  transition: opacity 0.25s;
-}
-
-.search_input_wrapper .search_button:hover,
-:focus {
-  opacity: 1;
-}
-
-.search_input_wrapper .search_button img {
-  width: 2.3vw;
-}
-
-.search_results {
-  border-top: 1px solid #555;
-}
-.search_results .description {
-  font-size: 1.8vw;
+.category_header .genre_list li :hover,
+.category_header .genre_list li :focus {
+  background-color: #444;
   font-weight: 500;
-  margin: 20px 0;
 }
 
-.search_results .description > span {
-  font-family: "Pretendard Variable";
+/* 장르 slick 슬라이드 */
+.genre_list .slick-list {
+  padding-top: 1.7vw;
+  /* margin-right: -4.6vw;
+  padding-right: 4.6vw; */
 }
 
+.genre_list .slick-track > li {
+  transition: transform 0.3s ease;
+}
+
+.genre_list .slick-track > li:hover,
+:focus {
+  transform: translateY(-0.7813vw);
+}
+
+.genre_list .slick-arrow {
+  position: absolute;
+  top: calc(50% + 0.85vw);
+  transform: translateY(-50%);
+  z-index: 1;
+  display: block;
+  width: 1.7188vw !important;
+  height: 3.125vw !important;
+}
+
+.genre_list .slick-prev {
+  left: -3vw !important;
+}
+
+.genre_list .slick-prev:before {
+  content: "" !important;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url("/assets/images/ico_prev.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.genre_list .slick-next {
+  right: -3vw !important;
+}
+
+.genre_list .slick-next:before {
+  content: "" !important;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url("/assets/images/ico_next.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* hover 상태에서 이미지 교체 */
+.genre_list .slick-prev:hover:before {
+  background-image: url("/assets/images/ico_prev_active.svg");
+}
+
+.genre_list .slick-next:hover:before {
+  background-image: url("/assets/images/ico_next_active.svg");
+}
+
+/* 콘텐츠 리스트 */
 .video_grid {
+  padding-top: 2vw;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
 }

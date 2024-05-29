@@ -199,6 +199,7 @@
   background-image: url("/assets/images/ico_like_default.svg");
   background-repeat: no-repeat;
   background-position: center;
+  background-size: 50%;
   transition: all 0.15s;
 }
 .purchase_detail .bottom .btn_box .btn_fav:hover {
@@ -230,7 +231,9 @@
   width: 60%;
 }
 .content_detail .info .info_in .description {
+  text-align: center;
   color: #ddd;
+  font-size: 1vw;
 }
 
 .content_detail .info .info_in > img {

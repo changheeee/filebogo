@@ -240,7 +240,7 @@
 }
 
 /* 스크롤 버튼 조정 */
-.arrows_wrap {
+#arrows_wrap {
   scale: 0.65;
   right: 0;
   bottom: 0;

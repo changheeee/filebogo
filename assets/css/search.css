@@ -62,6 +62,16 @@
   outline: none;
 }
 
+/* 자동완성 시에도 동일한 스타일 적용 */
+.search_input:-webkit-autofill,
+.search_input:-webkit-autofill:hover,
+.search_input:-webkit-autofill:focus,
+.search_input:-webkit-autofill:active {
+  -webkit-text-fill-color: #fff; /* 텍스트 색상 */
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset; /* 배경 색상 */
+  transition: background-color 5000s ease-in-out 0s;
+}
+
 .search_input_wrapper .search_button {
   cursor: pointer;
   opacity: 0.6;

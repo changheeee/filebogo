@@ -24,51 +24,6 @@
   </head>
   <body>
     <div id="menu_container" role="navigation"></div>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // 메뉴 로드
-        function loadMenu() {
-          fetch("/components/menu.html")
-            .then((response) => response.text())
-            .then((data) => {
-              document.getElementById("menu_container").innerHTML = data;
-            })
-            .catch((error) => console.error("Error loading menu:", error));
-        }
-
-        loadMenu();
-
-        var scrollStep = 200; // 스크롤 움직이는 거리 (픽셀 단위)
-
-        // 스크롤 버튼 클릭 이벤트 리스너
-        var buttons = document.querySelectorAll(
-          "#scrolltotop, [data-direction='up'], [data-direction='down']"
-        );
-        buttons.forEach(function (btn) {
-          btn.addEventListener("click", function () {
-            var direction = this.dataset.direction;
-            if (direction === "up") {
-              window.scrollBy(0, -scrollStep); // 위로 스크롤
-            } else if (direction === "down") {
-              window.scrollBy(0, scrollStep); // 아래로 스크롤
-            } else if (direction === "top") {
-              window.scrollTo({ top: 0, behavior: "smooth" }); // 맨 위로 스크롤
-            }
-          });
-        });
-
-        // 장르 선택 슬라이드
-        $(".genre_list").slick({
-          infinite: false,
-          slidesToShow: 9.5,
-          slidesToScroll: 9.5,
-          dots: false,
-          arrows: true,
-          autoplay: false,
-          autoplaySpeed: 5000,
-        });
-      });
-    </script>
 
     <!-- 페이지 영역 -->
     <main id="contents">
@@ -234,20 +189,39 @@
         </section>
       </div>
       <!-- 스크롤 버튼 -->
-      <div class="arrows_wrap">
+      <div id="arrows_wrap">
         <ul>
           <li id="scrolltotop" data-direction="top">
             <img src="/assets/images/ico_arrow_top.svg" alt="맨 위로" />
             <hr />
           </li>
-          <li data-direction="up">
+          <li class="scrollupdown" data-direction="up">
             <img src="/assets/images/ico_arrow_up.svg" alt="위로" />
           </li>
-          <li data-direction="down">
+          <li class="scrollupdown" data-direction="down">
             <img src="/assets/images/ico_arrow_down.svg" alt="아래로" />
           </li>
         </ul>
       </div>
+      <!-- 푸터 -->
+      <footer id="footer"></footer>
     </main>
+
+    <script src="/js/loadComponents.js"></script>
+    <script src="/js/scrollButtons.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // 장르 선택 슬라이드
+        $(".genre_list").slick({
+          infinite: false,
+          slidesToShow: 9.5,
+          slidesToScroll: 9.5,
+          dots: false,
+          arrows: true,
+          autoplay: false,
+          autoplaySpeed: 5000,
+        });
+      });
+    </script>
   </body>
 </html>

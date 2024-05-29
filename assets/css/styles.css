@@ -55,7 +55,7 @@
   background-repeat: no-repeat;
 }
 
-/* hover 상태에서 이미지 교체 */
+/* 슬라이드 화살표 호버 */
 .main_carousel .slick-prev:hover:before {
   background-image: url("/assets/images/ico_prev_active.svg");
 }
@@ -210,7 +210,7 @@
   background-repeat: no-repeat;
 }
 
-/* hover 상태에서 이미지 교체 */
+/* rank슬라이드 화살표 호버 */
 .rank_slide .slick-prev:hover:before {
   background-image: url("/assets/images/ico_prev_active.svg");
 }
@@ -219,19 +219,20 @@
   background-image: url("/assets/images/ico_next_active.svg");
 }
 
-.arrows_wrap {
+/* 스크롤 버튼 */
+#arrows_wrap {
   z-index: 9900;
   position: fixed;
   right: 1.5vw;
   bottom: 1.5vw;
 }
 
-.arrows_wrap ul {
+#arrows_wrap ul {
   border-radius: 0.8vw;
   overflow: hidden;
 }
 
-.arrows_wrap ul li {
+#arrows_wrap ul li {
   cursor: pointer;
   position: relative;
   width: 5.2vw;
@@ -244,7 +245,7 @@
   transition: background-color 0.3s;
 }
 
-.arrows_wrap ul > #scrolltotop > hr {
+#arrows_wrap ul > #scrolltotop > hr {
   position: absolute;
   bottom: 0;
   color: #555;
@@ -254,19 +255,29 @@
   border: none;
 }
 
-.arrows_wrap ul li > img {
+#arrows_wrap ul li > img {
   width: 30%;
   height: auto;
   opacity: 0.7;
   transition: opacity 0.3s;
 }
 
-.arrows_wrap ul li:hover,
-.arrows_wrap ul li:focus {
+#arrows_wrap ul li:hover,
+#arrows_wrap ul li:focus {
   background-color: #333;
 }
 
-.arrows_wrap ul li:hover > img,
-.arrows_wrap ul li:focus > img {
+#arrows_wrap ul li:hover > img,
+#arrows_wrap ul li:focus > img {
   opacity: 1;
+}
+
+/* 푸터 */
+#footer {
+  position: absolute;
+  bottom: 0;
+  padding: 1.6vw 0;
+  width: 100%;
+  color: #555;
+  border-top: 1px solid #555;
 }
